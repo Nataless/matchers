@@ -1,12 +1,5 @@
-import sortByHealth from '../index';
+function sortByHealth(heroes) {
+  return heroes.sort((a, b) => b.health - a.health);
+}
 
-describe('sortByHealth function', () => {
-  test.each([
-    [
-      [{ name: 'мечник', health: 10 }, { name: 'маг', health: 100 }, { name: 'лучник', health: 80 }],
-      [{ name: 'маг', health: 100 }, { name: 'лучник', health: 80 }, { name: 'мечник', health: 10 }]
-    ]
-  ])('should sort heroes by health in descending order', (input, expected) => {
-    expect(sortByHealth(input)).toEqual(expected);
-  });
-});
+export default sortByHealth;
